@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  sistema_gauss_app:
+    build: .
+    container_name: sistema_gauss_contenedor
+    restart: always
+    environment:
+      
+      - API_URL=https://api-gauss-jordan.servidor507.site
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true
